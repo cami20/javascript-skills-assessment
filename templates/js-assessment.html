@@ -237,6 +237,41 @@
 <script>
   "use strict";
   // put your code here
+
+  //number check works still need to fix the buttons
+
+  var randomNumber = Math.floor(Math.random() * 101);
+  var guess = document.getElementById('guessing-game-form').value();
+
+  function getStarted(evt){
+    $('#play-guessing-game').attr(disabled = true);
+    $('#number-guessed').attr(disabled = false);
+    $('#number-guessed').attr(disabled = false);
+
+    timeToPlay(guess);
+  }
+
+  function timeToPlay(guess){
+
+    
+    guess = parseInt(guess);
+    if (guess < randomNumber){
+      $('#number-guessing-msg').html('Your number is to low. Please guess again.');
+    }
+
+    else if (guess > randomNumber){
+      $('#number-guessing-msg').html('Your number is to high. Please guess again.');
+    }
+
+    else {
+      $('#number-guessing-msg').html('You guessed Correctly!');
+      $('#try-this-number').attr(disabled = true);
+    }
+  }
+
+  ('#play-guessing-game').on('click' getStarted);
+  ('#try-this-number').on('click', timeToPlay);
+
 </script>
 
 
@@ -303,6 +338,8 @@
   }
 
   // put your code here
+
+  $('#attack').on('submit', $.post('/t-rex-attack.json', t-rex-target););
 
 </script>
 
