@@ -80,7 +80,8 @@
 
   var submit = document.getElementById('prevent-form-submission-button');
 
-  function alertClick(){
+  function alertClick(evt){
+    evt.preventDefault();
     alert('Here is the Alert!');
   }
 
@@ -107,16 +108,25 @@
 <script>
   "use strict";
 
-//  Here's a stub of a function you can use!
+ //Here's a stub of a function you can use!
+ var reverse = document.getElementById('reverse-string-button');
 
-//  function reverseString(evt) {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+ function reverseString(evt) {
+   evt.preventDefault();
+
+   var msg = "Porcupines are cute";
+
+   // do some stuff here to reverse that string into a new variable
+   var newMsg = "";
+
+   for (var i = msg.length - 1; i >= 0; i --){
+    newMsg += msg[i];
+   }
+
+   alert(newMsg);
+ }
+
+ reverse.addEventListener('click', reverseString);
 
 
 </script>
