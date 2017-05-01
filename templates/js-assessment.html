@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="static/styles.css">
 </head>
 <body class="container">
+  <script src="https://code.jquery.com/jquery.js"></script>
 
 <h1>JavaScript Assessment</h1>
 <p>
@@ -200,6 +201,11 @@
 <script>
   "use strict";
   // put your code here
+  function changeImage(){
+    $('img').attr('src', 'http://www.dobermantalk.com/attachments/doberman-related-chat/9526d1271050831-dobermantalk-calendar-april-entries-doberman-puppies-basket-5.jpg');
+  }
+  $('#kittenz-rule').on('click', changeImage);
+
 </script>
 
 <div class="hint">
